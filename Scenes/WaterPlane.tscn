@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://doe2wxajl37bc"]
+
+[ext_resource type="Material" uid="uid://dn3e3xdfq7hc5" path="res://Shaders/water_shader_material.tres" id="1_mv6hk"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_wdk8s"]
+material = ExtResource("1_mv6hk")
+size = Vector2(100, 100)
+subdivide_width = 500
+subdivide_depth = 500
+orientation = 1
+
+[node name="WaterPlane" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0783789, -0.106299, -0.274028)
+layers = 3
+cast_shadow = 0
+gi_mode = 2
+mesh = SubResource("QuadMesh_wdk8s")

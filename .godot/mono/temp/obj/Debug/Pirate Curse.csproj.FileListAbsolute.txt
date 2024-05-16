@@ -1,0 +1,17 @@
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.csproj.AssemblyReference.cache
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.GeneratedMSBuildEditorConfig.editorconfig
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.AssemblyInfoInputs.cache
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.AssemblyInfo.cs
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.csproj.CoreCompileInputs.cache
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/bin/Debug/Pirate Curse.deps.json
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/bin/Debug/Pirate Curse.runtimeconfig.json
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/bin/Debug/Pirate Curse.dll
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/bin/Debug/Pirate Curse.pdb
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/bin/Debug/GodotSharp.dll
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.csproj.CopyComplete
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.dll
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/refint/Pirate Curse.dll
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.pdb
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.genruntimeconfig.cache
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/ref/Pirate Curse.dll

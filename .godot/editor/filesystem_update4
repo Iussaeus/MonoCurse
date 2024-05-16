@@ -1,0 +1,12 @@
+res://Scenes/World.tscn
+res://Shaders/WaterPlane.gdshader
+res://Shaders/water_shader_material.tres
+res://Shaders/PixelArt.gdshader
+res://Scenes/MainBoat.tscn
+res://Scenes/CameraMount.tscn
+res://Scripts/Entities/FloatingBody3D.cs
+res://Scripts/Entities/PlayerBody3D.cs
+res://Scripts/Entities/PlayerCamera.cs
+res://Scripts/Entities/Water.cs
+res://Scripts/Entities/World.cs
+res://Scripts/Managers/InputManager.cs

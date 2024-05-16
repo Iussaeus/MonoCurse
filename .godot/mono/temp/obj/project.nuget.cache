@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "b+xVht/tvdsebeUoLWxrcxHH6VR92lhECM8zIBnMohXkPV/sYmEoPNA8i6oiYhMooXS4tp2TnP91bxMYxlqcYA==",
+  "success": true,
+  "projectFilePath": "/home/john/games/godotProj/MonoCurse/Pirate Curse.csproj",
+  "expectedPackageFiles": [
+    "/home/john/.nuget/packages/godot.sourcegenerators/4.2.1/godot.sourcegenerators.4.2.1.nupkg.sha512",
+    "/home/john/.nuget/packages/godotsharp/4.2.1/godotsharp.4.2.1.nupkg.sha512",
+    "/home/john/.nuget/packages/godotsharpeditor/4.2.1/godotsharpeditor.4.2.1.nupkg.sha512",
+    "/home/john/.nuget/packages/microsoft.netcore.app.ref/6.0.29/microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "/home/john/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.29/microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

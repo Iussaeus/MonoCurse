@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4ey4cxugellh"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/FloatingBody3D.cs" id="1_u424d"]
+[ext_resource type="PackedScene" uid="uid://ug4m4vle2siv" path="res://Scenes/CameraMount.tscn" id="2_4g8c1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1ebn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ocwm"]
+albedo_color = Color(1, 0.0470588, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uxtrb"]
+material = SubResource("StandardMaterial3D_8ocwm")
+
+[node name="Ship" type="RigidBody3D"]
+mass = 5.0
+script = ExtResource("1_u424d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 4.71308e-09, 3.32903e-10, 7.45058e-09, 1, 1.49012e-08, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_v1ebn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_uxtrb")
+
+[node name="ProbeContainer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0233487, 0.464091)
+
+[node name="Probe" type="Marker3D" parent="ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="Probe2" type="Marker3D" parent="ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
+
+[node name="Probe3" type="Marker3D" parent="ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+
+[node name="Probe4" type="Marker3D" parent="ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1)
+
+[node name="Probe5" type="Marker3D" parent="ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0388968, -0.5)
+
+[node name="CameraMount" parent="." instance=ExtResource("2_4g8c1")]
+
+[editable path="CameraMount"]

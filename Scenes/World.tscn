@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7387313y2lb7"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/FloatingBody3D.cs" id="1_7yb8t"]
+[ext_resource type="PackedScene" uid="uid://doe2wxajl37bc" path="res://Scenes/WaterPlane.tscn" id="1_f8ift"]
+[ext_resource type="Script" path="res://Scripts/Entities/World.cs" id="1_wjd27"]
+[ext_resource type="Script" path="res://Scripts/Entities/Water.cs" id="3_nls36"]
+[ext_resource type="PackedScene" uid="uid://c4ey4cxugellh" path="res://Scenes/MainBoat.tscn" id="5_ioh1p"]
+[ext_resource type="Script" path="res://Scripts/Entities/PlayerBody3D.cs" id="6_470x0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oqtke"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u3rdn"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_wjd27")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(1920, 1060)
+offset_right = 40.0
+offset_bottom = 40.0
+stretch = true
+stretch_shrink = 3
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(640, 353)
+render_target_update_mode = 4
+
+[node name="Cube" type="RigidBody3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.801934, -0.154579, 0.577068, 0.0893289, 0.986112, 0.140011, -0.590697, -0.0607307, 0.804605, 0, 0.465246, 2.29237)
+mass = 5.0
+script = ExtResource("1_7yb8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Cube"]
+transform = Transform3D(1, 4.71308e-09, 3.32903e-10, 7.45058e-09, 1, 1.49012e-08, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_oqtke")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Cube"]
+mesh = SubResource("BoxMesh_u3rdn")
+
+[node name="ProbeContainer" type="Node3D" parent="SubViewportContainer/SubViewport/Cube"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14122, 0.464091)
+
+[node name="Probe" type="Marker3D" parent="SubViewportContainer/SubViewport/Cube/ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="Probe2" type="Marker3D" parent="SubViewportContainer/SubViewport/Cube/ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -1)
+
+[node name="Probe3" type="Marker3D" parent="SubViewportContainer/SubViewport/Cube/ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+
+[node name="Probe4" type="Marker3D" parent="SubViewportContainer/SubViewport/Cube/ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1)
+
+[node name="Probe5" type="Marker3D" parent="SubViewportContainer/SubViewport/Cube/ProbeContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.876605, 0.232709, -0.421201, 0.477406, -0.530411, 0.700534, -0.0603894, -0.815175, -0.576058, 0.110077, 3.12598, -0.209355)
+light_color = Color(1, 0.941176, 0.886275, 1)
+light_energy = 1.6
+shadow_enabled = true
+shadow_normal_bias = 2.5
+shadow_reverse_cull_face = true
+sky_mode = 1
+
+[node name="WaterPlane" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_f8ift")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0277389, -3.3094, 0.0633093)
+skeleton = NodePath("../../..")
+script = ExtResource("3_nls36")
+
+[node name="Ship" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_ioh1p")]
+script = ExtResource("6_470x0")
+RotationSpeed = 10.0
+Speed = 75.0
+CameraRotationSpeed = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.645298, -0.32852, 0.689685, 0, 0.902811, 0.430038, -0.763931, -0.277503, 0.582582, 8.2226, 3.49926, 5.46291)
+
+[editable path="SubViewportContainer/SubViewport/Ship"]
+[editable path="SubViewportContainer/SubViewport/Ship/CameraMount"]

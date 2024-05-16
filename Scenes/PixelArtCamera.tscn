@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwbewh6us3n4n"]
+
+[ext_resource type="Shader" path="res://Shaders/PixelArt.gdshader" id="1_xmwai"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4ds7y"]
+size = Vector2(3, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1v671"]
+render_priority = 0
+shader = ExtResource("1_xmwai")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.5
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(0.511497, -0.476008, 0.715393, 0.0019512, 0.833186, 0.55299, -0.859283, -0.281457, 0.427101, 4.92343, 3.38958, 2.59349)
+fov = 90.4931
+
+[node name="Postprocess" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 1.49012e-08, -5.96046e-08, -2.98023e-08, 1, -1.49012e-08, -2.98023e-08, 1.49012e-08, 1, 0.019336, 0.00227803, -0.706987)
+mesh = SubResource("QuadMesh_4ds7y")
+surface_material_override/0 = SubResource("ShaderMaterial_1v671")
