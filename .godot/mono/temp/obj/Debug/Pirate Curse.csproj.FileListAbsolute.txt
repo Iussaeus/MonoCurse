@@ -15,3 +15,4 @@
 /home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.pdb
 /home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.genruntimeconfig.cache
 /home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/ref/Pirate Curse.dll
+/home/john/games/godotProj/MonoCurse/.godot/mono/temp/obj/Debug/Pirate Curse.sourcelink.json

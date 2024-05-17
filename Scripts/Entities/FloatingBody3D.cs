@@ -11,14 +11,14 @@ public partial class FloatingBody3D : RigidBody3D
 	[Export] private float _waterAngularDrag = 0.05f;
 
 	private float _gravity;
-	private Node _water;
+	protected Node Water;
 
 	private Array<Node> _probes;
 	private bool _submerged;
 	
 	public override void _Ready()
 	{
-		_water = GetNode("/root/World/SubViewportContainer/SubViewport/WaterPlane");
+		Water = GetNode("/root/World/SubViewportContainer/SubViewport/WaterPlane");
 		_gravity = (float)ProjectSettings.GetSetting("physics/3d/default_gravity");
 		
 		var probeContainer = GetNodeOrNull("ProbeContainer");
@@ -32,23 +32,22 @@ public partial class FloatingBody3D : RigidBody3D
 	{
 		_submerged = false;
 
-		if (_probes == null) return;
+		if (_probes == null) 
 		{
-			var depth = (float)_water.Call("GetHeight", GlobalPosition) - GlobalPosition.Y;
+			var depth = (float)Water.Call("GetHeight", GlobalPosition) - GlobalPosition.Y;
 			if (depth > 0)
 			{
 				_submerged = true;
 				ApplyCentralForce(Vector3.Up * _floatForce * _gravity * depth);
 			}
 		}
-
-		if (_probes == null) return;
+		else 
 		{
 			foreach (var node in _probes)
 			{
 				var probe = (Marker3D)node;
 				{
-					var depth = (float)_water.Call("GetHeight", probe.GlobalPosition) - probe.GlobalPosition.Y;
+					var depth = (float)Water.Call("GetHeight", probe.GlobalPosition) - probe.GlobalPosition.Y;
 					if (depth < 0) continue;
 					_submerged = true;
 					ApplyForce(Vector3.Up * _floatForce * _gravity * depth, probe.GlobalPosition - GlobalPosition);

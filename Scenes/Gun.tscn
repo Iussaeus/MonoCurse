@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b83rq3frv8fo1"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Gun.cs" id="1_t66pg"]
+[ext_resource type="PackedScene" uid="uid://diy08q333uwou" path="res://Scenes/Projectile.tscn" id="2_oexv8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rcy1h"]
+radius = 0.1455
+
+[node name="Gun" type="Node3D"]
+script = ExtResource("1_t66pg")
+_gunPower = 0.25
+_projectile = ExtResource("2_oexv8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_rcy1h")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.08573)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://6ht2jn6m3q7w"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/PirateShip.cs" id="1_3ee0k"]
+[ext_resource type="PackedScene" uid="uid://cl1qaqjx4ef5r" path="res://Scenes/ProbeContainer.tscn" id="2_nuxev"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tudp"]
+albedo_color = Color(1, 0.0823529, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ixjc5"]
+material = SubResource("StandardMaterial3D_4tudp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5wal4"]
+
+[node name="PirateShip" type="RigidBody3D"]
+script = ExtResource("1_3ee0k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ixjc5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_5wal4")
+
+[node name="ProbeContainer" parent="." instance=ExtResource("2_nuxev")]

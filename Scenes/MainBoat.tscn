@@ -1,19 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4ey4cxugellh"]
+[gd_scene load_steps=7 format=3 uid="uid://c4ey4cxugellh"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/FloatingBody3D.cs" id="1_u424d"]
+[ext_resource type="Script" path="res://Scripts/Entities/PlayerBody3D.cs" id="1_v7rtv"]
 [ext_resource type="PackedScene" uid="uid://ug4m4vle2siv" path="res://Scenes/CameraMount.tscn" id="2_4g8c1"]
+[ext_resource type="PackedScene" uid="uid://b83rq3frv8fo1" path="res://Scenes/Gun.tscn" id="2_yysb3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v1ebn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ocwm"]
-albedo_color = Color(1, 0.0470588, 1, 1)
+albedo_color = Color(1, 0.423529, 0.0392157, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uxtrb"]
 material = SubResource("StandardMaterial3D_8ocwm")
 
 [node name="Ship" type="RigidBody3D"]
 mass = 5.0
-script = ExtResource("1_u424d")
+script = ExtResource("1_v7rtv")
+
+[node name="Gun" parent="." instance=ExtResource("2_yysb3")]
+transform = Transform3D(1, 0, 0, 0, 0.904477, -0.426521, 0, 0.426521, 0.904477, 0, 0.656538, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 4.71308e-09, 3.32903e-10, 7.45058e-09, 1, 1.49012e-08, 0, 0, 1, 0, 0, 0)

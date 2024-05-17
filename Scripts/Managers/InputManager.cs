@@ -11,6 +11,7 @@ public partial class InputManager : Node3D
     private static Camera3D _playerCamera;
     private static Camera3D _worldCamera;
     private static Node3D _playerCameraMount;
+    private static Gun _gun;
 
     public override void _Ready()
     {
@@ -18,14 +19,9 @@ public partial class InputManager : Node3D
         _playerCameraMount = GetNode<Node3D>("/root/World/SubViewportContainer/SubViewport/Ship/CameraMount");
         _playerCamera = GetNode<Camera3D>("/root/World/SubViewportContainer/SubViewport/Ship/CameraMount/Camera3D");
         _worldCamera = GetNode<Camera3D>("/root/World/SubViewportContainer/SubViewport/Camera3D");
-
+        _gun = _playerBody3D.GetNode<Gun>("Gun");
         Input.MouseMode = Input.MouseModeEnum.Captured;
     }
-
-    public override void _Process(double delta)
-    {
-    }
-    
 
     public override void _PhysicsProcess(double delta)
     {
@@ -38,6 +34,7 @@ public partial class InputManager : Node3D
 
     public override void _Input(InputEvent @event)
     {
+        if (@event.IsActionPressed("shoot")) _gun.Shoot();
         if (@event.IsActionPressed("camera_one")) _playerCamera.MakeCurrent();
         if (@event.IsActionPressed("camera_two")) _worldCamera.MakeCurrent();
         

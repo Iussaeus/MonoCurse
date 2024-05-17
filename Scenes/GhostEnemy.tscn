@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg5hbv1fjsffe"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/GhostShipProto.cs" id="1_ntfo2"]
+[ext_resource type="PackedScene" uid="uid://cl1qaqjx4ef5r" path="res://Scenes/ProbeContainer.tscn" id="2_k3xfd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2mbow"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq1j6"]
+albedo_color = Color(1, 0, 0.564706, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wydw4"]
+material = SubResource("StandardMaterial3D_gq1j6")
+
+[node name="GhostEnemy" type="RigidBody3D"]
+script = ExtResource("1_ntfo2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2mbow")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_wydw4")
+
+[node name="ProbeContainer" parent="." instance=ExtResource("2_k3xfd")]
