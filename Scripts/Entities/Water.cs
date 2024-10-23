@@ -29,7 +29,7 @@ public partial class Water : MeshInstance3D
 		_material.SetShaderParameter("wave_time", _time);
 	}
 	
-	private float GetHeight(Vector3 worldPosition)
+	public float GetHeight(Vector3 worldPosition)
 	{
 		var uvX = Mathf.Wrap(worldPosition.X / _noiseScale + _time * _waveSpeed, 0, 1);
 		var uvY = Mathf.Wrap(worldPosition.Z / _noiseScale + _time * _waveSpeed, 0, 1);
